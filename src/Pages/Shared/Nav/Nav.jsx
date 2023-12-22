@@ -47,11 +47,14 @@ const Nav = () => {
         <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/dashboard/maketodo">Dashboard</NavLink>
       </li>
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
+      { user &&<li>
+        <NavLink className="lg:hidden" to="/dashboard/profile">profile</NavLink>
+      </li>}
      
     </>
   );
@@ -92,15 +95,15 @@ const Nav = () => {
             src="https://i.imgur.com/Z5misJF.png"
             alt=""
           /> */}
-          <h2 className="text-3xl">Task Management</h2>
+          <h2 className=" md:text-3xl">Task Management</h2>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <h1> {useName} </h1>
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
+          <h1 className="hidden md:block"> {useName} </h1>
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar hidden md:block">
+            <div className="w-10 rounded-full ">
               <img src={userimg} alt="" />
             </div>
           </label>

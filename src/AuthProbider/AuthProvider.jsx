@@ -7,6 +7,7 @@ import {
   signInWithPopup, 
   GoogleAuthProvider, 
   signOut,
+  GithubAuthProvider,
   
 } from "firebase/auth";
 // import app from '../Firebase/Firebase.config'
@@ -38,11 +39,30 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const signinWithGoogle = () => {
-    setLoading(true);
-    const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
-  };
+  // const signinWithGoogle = () => {
+  //   setLoading(true);
+  //   const provider = new GoogleAuthProvider();
+  //   return signInWithPopup(auth, provider);
+  // };
+  // const signinWithGithub = () => {
+  //   setLoading(true);
+  //   const provider = new GithubAuthProvider();
+  //   return signInWithPopup(auth, provider);
+  // };
+  
+
+const signinWithGoogle = () => {
+  setLoading(true);
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider);
+};
+
+const signinWithGithub = () => {
+  setLoading(true);
+  const provider = new GithubAuthProvider();
+  return signInWithPopup(auth, provider);
+};
+
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -62,6 +82,7 @@ const AuthProvider = ({ children }) => {
     signin,
     signinWithGoogle,
     setUser,
+    signinWithGithub,
   };
 
   return (

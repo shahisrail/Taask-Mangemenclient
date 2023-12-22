@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 const publicApi = axios.create({
-  baseURL: 'https://task-manegment-server-pi.vercel.app',
+  baseURL: 'http://localhost:5000',
 });
 
 const UseAxiosPublic = () => {

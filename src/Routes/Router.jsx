@@ -7,6 +7,7 @@ import Dashborad from "../Layout/Dashborad";
 import CreateTodo from "../Pages/CreateTodo/CreateTodo";
 import UpdateTodo from "../Pages/UpdateTodo/UpdateTodo";
 import Profile from "../Pages/Profile/Profile";
+import Notificatoin from "../Pages/Notificatoin/Notificatoin";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
         path: "updatetask/:id",
         element: <UpdateTodo></UpdateTodo>,
         loader: ({ params }) =>
-          fetch(`https://task-manegment-server-pi.vercel.app/updatetask/${params.id}`),
+          fetch(`http://localhost:5000/updatetask/${params.id}`),
+      },
+      {
+         path:"notificatoin",
+         element:<Notificatoin></Notificatoin>
       },
       {
         path: "profile",

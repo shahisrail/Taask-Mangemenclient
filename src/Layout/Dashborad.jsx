@@ -39,6 +39,11 @@ const Dashborad = () => {
             + Add new Task
             </NavLink>
           </li>}
+       { user && <li className="flex items-center gap-2 ">
+            <NavLink to="/dashboard/notificatoin">
+          Notificatoin
+            </NavLink>
+          </li>}
 
           <div className="divider"></div>
 

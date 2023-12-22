@@ -53,7 +53,7 @@ const Fotter = () => {
               <FaTwitter></FaTwitter>
             </a>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-col  md:flex-row">
           <a className="btn ">
         <BiLogoPlayStore className="text-3xl"></BiLogoPlayStore>
             <div>
@@ -61,6 +61,7 @@ const Fotter = () => {
               Google play
             </div>
           </a>
+          
           <a className="btn ">
         <FaApple className="text-3xl"></FaApple>
             <div>

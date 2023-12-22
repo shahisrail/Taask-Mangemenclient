@@ -22,7 +22,7 @@ const UpdateTodo = () => {
       separatelists: data.separatelists,
     };
     const Taskres = await axios.patch(
-      `https://task-manegment-server-pi.vercel.app/updatetask/${_id}`,
+      `http://localhost:5000/updatetask/${_id}`,
       taksiteam
     );
     console.log(Taskres.data);

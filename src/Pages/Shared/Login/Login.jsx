@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
-import { FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../AuthProbider/AuthProvider";
 
 
 const Login = () => {
-  const { signin, signinWithGoogle } = useContext(AuthContext);
+  const { signin, signinWithGoogle ,signinWithGithub} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -49,6 +49,24 @@ const Login = () => {
         Swal.fire({
           icon: "error",
           title: "Google Sign-in Failed",
+          text: error.message,
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
+      });
+  };
+  const handleGithubLogin = () => {
+    signinWithGithub()
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "GIthub Sign-in Successful",
+        });
+        navigate(location?.state ? location.state : "/dashboard");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Github Sign-in Failed",
           text: error.message,
           footer: '<a href="">Why do I have this issue?</a>',
         });
@@ -103,13 +121,22 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
-        <div className="form-control mt-6">
+        <div className="form-control mt-6 flex flex-row ">
           <button
             onClick={handleGoogleLogin}
             className="mx-auto w-[200px]  rounded-full h-[100px]"
           >
             <button className="btn font-medium ">Login with <FaGoogle></FaGoogle  > </button>
           </button>
+          <button
+            onClick={handleGithubLogin}
+            className="mx-auto w-[200px]  rounded-full h-[100px]"
+          >
+            <button className="btn font-medium ">Login with <FaGithub></FaGithub></button>
+          </button>
+        </div>
+        <div className="form-control mt-6">
+         
         </div>
         <p className="text-center mt-5">
           Dont have an account?
