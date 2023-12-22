@@ -6,6 +6,7 @@ import Regestare from "../Pages/Shared/Regestare.jsx/Regestare";
 import Dashborad from "../Layout/Dashborad";
 import CreateTodo from "../Pages/CreateTodo/CreateTodo";
 import UpdateTodo from "../Pages/UpdateTodo/UpdateTodo";
+import Profile from "../Pages/Profile/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         element: <UpdateTodo></UpdateTodo>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/updatetask/${params.id}`),
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>
       },
     ],
   },
