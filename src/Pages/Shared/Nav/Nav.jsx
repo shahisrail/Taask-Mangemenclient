@@ -44,7 +44,10 @@ const Nav = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/aboutpage">About</NavLink>
+      </li>
+      <li>
+        <NavLink to="/faq">FAQ</NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/maketodo">Dashboard</NavLink>

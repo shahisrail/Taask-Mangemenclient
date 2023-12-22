@@ -8,6 +8,8 @@ import CreateTodo from "../Pages/CreateTodo/CreateTodo";
 import UpdateTodo from "../Pages/UpdateTodo/UpdateTodo";
 import Profile from "../Pages/Profile/Profile";
 import Notificatoin from "../Pages/Notificatoin/Notificatoin";
+import About from "../Pages/About/About";
+import FAQ from "../Pages/FAQ/FAQ";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +20,13 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/aboutpage",
+        element:<About></About>
+      },{
+path:'/faq',
+element:<FAQ></FAQ>
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -25,6 +34,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Regestare></Regestare>,
       },
+     
     ],
   },
   {
@@ -39,7 +49,7 @@ const router = createBrowserRouter([
         path: "updatetask/:id",
         element: <UpdateTodo></UpdateTodo>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatetask/${params.id}`),
+          fetch(`https://task-manegment-server-pi.vercel.app/updatetask/${params.id}`),
       },
       {
          path:"notificatoin",
