@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path: "updatetask/:id",
         element: <UpdateTodo></UpdateTodo>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatetask/${params.id}`),
+          fetch(`https://task-manegment-server-pi.vercel.app/updatetask/${params.id}`),
       },
       {
         path: "profile",

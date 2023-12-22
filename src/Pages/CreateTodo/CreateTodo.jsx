@@ -26,12 +26,10 @@ const CreateTodo = () => {
     console.log(data);
 
     const taksiteam = {
-      email: data.email,
       priority: data.priority,
       titale: data.titale,
       Descriptoin: data.Descriptoin,
       Dedline: data.Dedline,
-      separatelists: data.separatelists,
       email,
       status: "todo",
     };

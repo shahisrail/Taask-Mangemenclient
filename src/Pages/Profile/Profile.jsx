@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../AuthProbider/AuthProvider";
 
 const Profile = () => {
+  const {user} = useContext(AuthContext)
   return (
-    <div>
-      <div className="card w-96 bg-base-100 shadow-xl mx-auto ">
+    <div className="flex ">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-10 p-6">
         <div className="avatar mx-auto">
           <div className="w-24 rounded-full">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <img src={user?.photoURL} />
           </div>
         </div>
         <div className="card-body">
           <h2 className="card-title">
-            Shoes!
-            <div className="badge badge-secondary">NEW</div>
+           Name: {user?.displayName } <br />
+           Name: {user?.email }
+          
           </h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+           
           </div>
         </div>
       </div>
