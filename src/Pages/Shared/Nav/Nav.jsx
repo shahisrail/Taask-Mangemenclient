@@ -46,12 +46,9 @@ const Nav = () => {
       <li>
         <NavLink to="/aboutpage">About</NavLink>
       </li>
-      <li>
-        <NavLink to="/faq">FAQ</NavLink>
-      </li>
-      <li>
+      {user&&<li>
         <NavLink to="/dashboard/maketodo">Dashboard</NavLink>
-      </li>
+      </li>}
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
@@ -114,7 +111,7 @@ const Nav = () => {
             <>
               <button
                 onClick={handelSignout}
-                className="btn bg-[#62C8BA] font-bold hover:bg-[#0E204D] text-white"
+                className="btn btn-grad w-[120px] md:w-[170px] bg-[#62C8BA] font-bold hover:bg-[#0E204D] text-white"
               >
                 Sign out
               </button>

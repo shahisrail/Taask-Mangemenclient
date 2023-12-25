@@ -21,11 +21,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/aboutpage",
-        element:<About></About>
-      },{
-path:'/faq',
-element:<FAQ></FAQ>
+        element: <About></About>,
       },
+      // {
+      //   path: "/faq",
+      //   element: <FAQ></FAQ>,
+      // },
       {
         path: "/login",
         element: <Login></Login>,
@@ -34,7 +35,6 @@ element:<FAQ></FAQ>
         path: "/register",
         element: <Regestare></Regestare>,
       },
-     
     ],
   },
   {
@@ -49,15 +49,17 @@ element:<FAQ></FAQ>
         path: "updatetask/:id",
         element: <UpdateTodo></UpdateTodo>,
         loader: ({ params }) =>
-          fetch(`https://task-manegment-server-pi.vercel.app/updatetask/${params.id}`),
+          fetch(
+            `https://task-manegment-server-pi.vercel.app/updatetask/${params.id}`
+          ),
       },
       {
-         path:"notificatoin",
-         element:<Notificatoin></Notificatoin>
+        path: "notificatoin",
+        element: <Notificatoin></Notificatoin>,
       },
       {
         path: "profile",
-        element: <Profile></Profile>
+        element: <Profile></Profile>,
       },
     ],
   },

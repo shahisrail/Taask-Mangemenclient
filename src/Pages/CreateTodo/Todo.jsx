@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { AuthContext } from "../../AuthProbider/AuthProvider";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
-
+import '../Btn/Btn.css'
 const Todo = () => {
   const { user } = useContext(AuthContext);
   const axiosPublic = UseAxiosPublic();
@@ -27,7 +27,7 @@ const Todo = () => {
   };
 
   useEffect(() => {
-    fetchTaskData(); // Fetch data when the component mounts
+    fetchTaskData(); 
   }, [task]);
 
   useEffect(() => {
@@ -165,11 +165,15 @@ const Todo = () => {
                               </h2>
                               <p className="">{task.Descriptoin}</p>
                               <p>{task.priority}</p>
-                              <div className="card-actions justify-end">
+                              <div className="card-actions  justify-end ">
                                
-                                 <button className="btn"   onClick={() => handelDelete(task._id)}> Delete </button> 
+                              <div className="flex">
+                              <button className="btn-grad "   onClick={() => handelDelete(task._id)}> Delete </button> 
                                  <Link   to={`/dashboard/updateTask/${task._id}`}>
-                                <button className="btn"  > Update </button>   </Link> 
+                                <button className=" btn-grad"  > Update </button>   </Link>
+                                </div> 
+
+
                                 </div>       
                                                    
                               </div>
@@ -218,9 +222,11 @@ const Todo = () => {
                               <p>{task.priority}</p>
                               <div className="card-actions justify-end">
                                
-                                 <button className="btn"   onClick={() => handelDelete(task._id)}> Delete </button> 
+                              <div className="flex">
+                              <button className="btn-grad "   onClick={() => handelDelete(task._id)}> Delete </button> 
                                  <Link   to={`/dashboard/updateTask/${task._id}`}>
-                                <button className="btn"  > Update </button>   </Link> 
+                                <button className=" btn-grad"  > Update </button>   </Link>
+                                </div> 
                                 </div>       
                                                    
                               </div>
@@ -248,21 +254,22 @@ const Todo = () => {
                 >
                   <div className="">
                     <h1 className="text-center text-3xl mt-3 mb-3">Complete</h1>
-                    {completed?.map((task, index) => (
+                   
+                     {completed?.map((task, index) => (
                       <Draggable
                         key={task._id}
                         draggableId={task._id}
                         index={index}
                       >
-                        {(provided) => (                         
+                        {(provided) => (
                           <div
                             key={task._id}
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            className="card   bg-base-100 shadow-xl"
+                            className="w-full justify-center mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5"
                           >
-                            <div className="card-body border">
+                              <div className="card-body border">
                               <h2 className="card-title">
                                 {task.titale}
                               
@@ -271,13 +278,16 @@ const Todo = () => {
                               <p>{task.priority}</p>
                               <div className="card-actions justify-end">
                                
-                                 <button className="btn"   onClick={() => handelDelete(task._id)}> Delete </button> 
+                              <div className="flex">
+                              <button className="btn-grad "   onClick={() => handelDelete(task._id)}> Delete </button> 
                                  <Link   to={`/dashboard/updateTask/${task._id}`}>
-                                <button className="btn"  > Update </button>   </Link> 
+                                <button className=" btn-grad"  > Update </button>   </Link>
+                                </div>  
                                 </div>       
                                                    
                               </div>
-                            
+
+                           
                           </div>
                         )}
                       </Draggable>

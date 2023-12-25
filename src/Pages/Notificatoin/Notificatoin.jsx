@@ -1,6 +1,3 @@
-
-
-
 import React, { useContext } from "react";
 
 import { useQuery } from "@tanstack/react-query";
@@ -10,8 +7,8 @@ import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 import { AuthContext } from "../../AuthProbider/AuthProvider";
 
 const Notificatoin = () => {
-  const { user } = useContext(AuthContext); // Ensure you have access to the user context
-  const axiosPublic = UseAxiosPublic()
+  const { user } = useContext(AuthContext);
+  const axiosPublic = UseAxiosPublic();
 
   const { data: tasks = [], refetch } = useQuery({
     queryKey: ["task"],

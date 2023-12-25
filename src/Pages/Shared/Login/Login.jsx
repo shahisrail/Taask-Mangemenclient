@@ -24,7 +24,7 @@ const Login = () => {
           icon: "success",
           title: "Login Successful",
         });
-        navigate(location?.state ? location.state : "/dashboard");
+        navigate(location?.state ? location.state : "/dashboard/maketodo");
       })
       .catch((error) => {
         Swal.fire({

@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProbider/AuthProvider";
 import Todo from "./Todo";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
-
+import '../Btn/Btn.css'
 const CreateTodo = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
@@ -43,10 +43,10 @@ const CreateTodo = () => {
   return (
     <>
       <div className="w-1/2 mx-auto mt-5">
-        <h2 className="text-4xl ">
-          Add a New Task{" "}
+        <h2 className="text-4xl flex justify-center items-center ">
+          Add a New Task
           <button
-            className="btn btn-outline text-white bg-[#00CBBD] w-2/6 ml-5 text-2xl"
+            className="btn-grad w-[200px] h-[70px]"
             onClick={openModal}
           >
             Add +

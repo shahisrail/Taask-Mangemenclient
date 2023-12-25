@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../../AuthProbider/AuthProvider";
 
+import { AuthContext } from "../../../../AuthProbider/AuthProvider";
+import "../Banner/Btn.css"
 const Banner = () => {
   const { user } = useContext(AuthContext);
   return (
@@ -9,7 +10,7 @@ const Banner = () => {
       className="hero min-h-screen"
       style={{
         backgroundImage:
-          "url(https://i.postimg.cc/gj6KHwM1/deadline-time-management-business-concept-vector-107791-42.jpg)",
+          "url(https://i.postimg.cc/QtsqWSc9/99307145749.png)",
       }}
     >
       <div className="hero-overlay "></div>
@@ -23,14 +24,14 @@ const Banner = () => {
           </p>
           {user ? (
             <Link to="/dashboard/maketodo">
-              <button className="btn btn-outline btn-accent">
-                Lets's Explore
+              <button className=" btn-grad">
+                Letss Explore
               </button>
             </Link>
           ) : (
             <Link to="/login">
               {" "}
-              <button className="btn btn-outline btn-accent">
+              <button className="btn-grad">
                 Lets's Explore
               </button>
             </Link>
